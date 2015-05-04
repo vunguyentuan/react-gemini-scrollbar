@@ -38,7 +38,7 @@ module.exports = React.createClass({
     },
 
     render: function () {
-        var {className, children, ...other} = this.props,
+        var $__0=    this.props,className=$__0.className,children=$__0.children,other=(function(source, exclusion) {var rest = {};var hasOwn = Object.prototype.hasOwnProperty;if (source == null) {throw new TypeError();}for (var key in source) {if (hasOwn.call(source, key) && !hasOwn.call(exclusion, key)) {rest[key] = source[key];}}return rest;})($__0,{className:1,children:1}),
             classes = '';
 
         if (className) {
@@ -46,17 +46,17 @@ module.exports = React.createClass({
         }
 
         return (
-            <div {...other} className={classes}>
-                <div className='gm-scrollbar -vertical'>
-                    <div className='thumb'></div>
-                </div>
-                <div className='gm-scrollbar -horizontal'>
-                    <div className='thumb'></div>
-                </div>
-                <div className='gm-scroll-view'>
-                    {children}
-                </div>
-            </div>
+            React.createElement("div", React.__spread({},  other, {className: classes}), 
+                React.createElement("div", {className: "gm-scrollbar -vertical"}, 
+                    React.createElement("div", {className: "thumb"})
+                ), 
+                React.createElement("div", {className: "gm-scrollbar -horizontal"}, 
+                    React.createElement("div", {className: "thumb"})
+                ), 
+                React.createElement("div", {className: "gm-scroll-view"}, 
+                    children
+                )
+            )
         );
     }
 });
